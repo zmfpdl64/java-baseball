@@ -38,10 +38,7 @@ public class BaseBall {
             checkStrike(user_num, opponent_num);
             checkBall(user_num, opponent_num);
             print_state();  //현재 스트라이크, 볼 상태 출력
-            if(this.strike == 3){   //게임 종료
-                System.out.println(match_Message);
-                restart();  //다시 할건지 물어보는 함수
-            }
+            right_answer(); //3스트라이크 시 종료 or 재시작
             init_Strike_Ball(); //스트라이크, 볼 0으로 초기화
 
         }
@@ -100,7 +97,13 @@ public class BaseBall {
         }else{
             System.out.println(end_Message);
         }
+    }
 
+    public void right_answer() {
+        if(this.strike == 3){
+            System.out.println(match_Message);
+            restart();  //다시 할건지 물어보는 함수
+        }
     }
 
 }
