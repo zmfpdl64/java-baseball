@@ -10,7 +10,7 @@ public class Opponent {
     private final int number;
     private static final int MAX = 9;
     private static final int MIN = 1;
-    protected static final int SIZE = 3;
+    public static final int SIZE = 3;
 
     public Opponent() {
         this.number = checkOverlap();
