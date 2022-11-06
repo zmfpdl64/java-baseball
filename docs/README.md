@@ -68,8 +68,10 @@
     - playGame (게임 시작)
       - checkStrike (스트라이크 체크) 
       - checkBall (볼 체크)
+        - equalCharacter (문자열 체크)
       - print_State (스트라이크, 볼 상태 출력)
-      - restart (다시 시작할건지 체크)
+      - right_answer (3스트라이크 일때 종료 or 재시작)
+        - restart (다시 시작할건지 체크)
       - init_Strike_Ball (사용자에게 입력받기 전에 초기화)
 - ## User
   - Field
