@@ -36,6 +36,17 @@ class ValidTest extends NsTest {
                 1, 3, 5, 5, 8, 9
         );
     }
+    @Test
+    void 재시작_입력값_정수아닌값_예외_테스트() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    assertThatThrownBy(() -> runException("246", "135", "a"))
+                            .isInstanceOf(IllegalArgumentException.class);
+                },
+                1, 3, 5, 5, 8, 9
+        );
+    }
+
 
     @Override
     protected void runMain() {
