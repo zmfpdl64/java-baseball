@@ -68,6 +68,19 @@ class BaseBallTest extends NsTest {
         assertThat(game.ball).isEqualTo(0);
         assertThat(game.strike).isEqualTo(0);
     }
+
+    @Test
+    void right_answer_그리고_restart_기능확인() {
+        BaseBall game = new BaseBall();
+
+        assertRandomNumberInRangeTest(() ->
+        {
+            run("123", "1","123","2");
+            assertThat(output()).contains(game.restart_Message, game.end_Message, game.match_Message);
+        },
+                1,2,3,1,2,3);
+    }
+
     @Override
     protected void runMain() {
         Application.main(new String[]{});
