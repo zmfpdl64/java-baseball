@@ -11,7 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ValidTest extends NsTest {
 
+    @DisplayName("예외: 숫자 범위를 벗어남")
     @Test
+    void 숫자의_범위_예외_테스트() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("1234"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
     void 숫자가_아닌값_예외_테스트() {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException("a23"))
