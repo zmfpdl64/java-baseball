@@ -47,6 +47,18 @@ class BaseBallTest extends NsTest {
         assertThat(game.ball).isEqualTo(result);
     }
 
+    @DisplayName("상태 출력 메시지 확인")
+    @Test
+    void print_state() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("123", "234", "321", "2");
+                assertThat(output()).contains("2볼 1스트라이크", "2볼", "3스트라이크", "게임 종료");
+                },
+                3,2,1
+        );
+    }
+
     @Test
     void init_Strike_Ball() {
         BaseBall game = new BaseBall();
