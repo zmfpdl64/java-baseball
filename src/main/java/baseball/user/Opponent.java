@@ -28,6 +28,7 @@ public class Opponent {
                 nums.add(num);
             }
         }
+        Collections.reverse(nums);
         for(int i = 0; i < SIZE; i++){  //각 자릿수 합치기
             result += nums.get(i)*Math.pow(10, i);
         }
