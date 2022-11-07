@@ -15,6 +15,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BaseBallTest extends NsTest {
 
+    @Test
+    void checkStrike() {
+        BaseBall game = new BaseBall();
+        int num1 = 123;
+        int num2 = 321;
+        int result = 1;
+        game.checkStrike(num1, num2);
+        assertThat(game.strike).isEqualTo(result);
+    }
 
 
     @Override
