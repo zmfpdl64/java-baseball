@@ -4,12 +4,14 @@ import baseball.Application;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.assertj.core.api.AssertionsForClassTypes;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,6 +29,7 @@ class BaseBallTest extends NsTest {
             );
     }
 
+    @DisplayName("스트라이크 갯수 확인")
     @Test
     void checkStrike() {
         BaseBall game = new BaseBall();
@@ -37,6 +40,7 @@ class BaseBallTest extends NsTest {
         assertThat(game.strike).isEqualTo(result);
     }
 
+    @DisplayName("볼 갯수 확인")
     @Test
     void checkBall() {
         BaseBall game = new BaseBall();
@@ -59,6 +63,7 @@ class BaseBallTest extends NsTest {
         );
     }
 
+    @DisplayName("스트라이크, 볼 초기화")
     @Test
     void init_Strike_Ball() {
         BaseBall game = new BaseBall();
