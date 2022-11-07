@@ -18,14 +18,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("유저 클래스 테스트")
 class UserTest {
 
-    @DisplayName("유저한테 입력 받기")
+    @DisplayName("예외: 유저한테 입력 받기")
     @Test
     void 유저한테_정상적인_값_입력받기(){
         int result = 123;
         String test = "123";
         assertThat(Valid.userInput(test)).isEqualTo(result);
     }
-    @DisplayName("유저 입력값 예외 발생1")
+    @DisplayName("예외: 유저_입력값_길이가_3이_아닐때_예외_발생 메시지")
     @Test
     void 유저_입력값_길이가_3이_아닐때_예외_발생(){
         String input = "12";
@@ -33,7 +33,7 @@ class UserTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("숫자의 범위를 벗어났습니다.");
     }
-    @DisplayName("유저 입력값 예외 발생2")
+    @DisplayName("예외: 유저_입력값_정수가_아닐때_예외_발생 메시지")
     @Test
     void 유저_입력값_정수가_아닐때_예외_발생(){
         Character input = 'a';
@@ -41,7 +41,7 @@ class UserTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("입력된 값이 정수가 아닙니다.");
     }
-    @DisplayName("유저 입력값 예외 발생3")
+    @DisplayName("예외: 유저_입력값_중복된_값_존재시_예외_발생 메시지")
     @Test
     void 유저_입력값_중복된_값_존재시_예외_발생(){
         Character input = '1';
