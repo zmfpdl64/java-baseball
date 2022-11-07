@@ -25,6 +25,15 @@ class BaseBallTest extends NsTest {
         assertThat(game.strike).isEqualTo(result);
     }
 
+    @Test
+    void checkBall() {
+        BaseBall game = new BaseBall();
+        int num1 = 123;
+        int num2 = 321;
+        int result = 2;
+        game.checkBall(num1, num2);
+        assertThat(game.ball).isEqualTo(result);
+    }
 
     @Override
     protected void runMain() {
