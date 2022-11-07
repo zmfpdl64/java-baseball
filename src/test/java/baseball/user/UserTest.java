@@ -21,9 +21,9 @@ class UserTest {
     @DisplayName("유저한테 입력 받기")
     @Test
     void 유저한테_정상적인_값_입력받기(){
-        User user = new User();
-        int number = user.inputNumber();
-        assertThat(number).isBetween(100, 999);
+        int result = 123;
+        String test = "123";
+        assertThat(Valid.userInput(test)).isEqualTo(result);
     }
     @DisplayName("유저 입력값 예외 발생1")
     @Test
@@ -31,7 +31,7 @@ class UserTest {
         String input = "12";
         assertThatThrownBy(() -> Valid.OutOfRange(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("숫자의 범위를 벗어났습니다. 다시 입력해주세요");
+                .hasMessageContaining("숫자의 범위를 벗어났습니다.");
     }
     @DisplayName("유저 입력값 예외 발생2")
     @Test
@@ -39,7 +39,7 @@ class UserTest {
         Character input = 'a';
         assertThatThrownBy(() -> Valid.NotMatch(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("정수로 다시 입력해주세요");
+                .hasMessageContaining("입력된 값이 정수가 아닙니다.");
     }
     @DisplayName("유저 입력값 예외 발생3")
     @Test
@@ -48,7 +48,7 @@ class UserTest {
         List<Character> list = new ArrayList<>(List.of('1','2'));
         assertThatThrownBy(() -> Valid.checkOverlap(list, input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("중복된 숫자가 들어 왔습니다. 다시 입력해주세요");
+                .hasMessageContaining("중복된 숫자가 들어 왔습니다.");
     }
 
 }
