@@ -11,6 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ValidTest extends NsTest {
 
+    @Test
+    void 숫자가_아닌값_예외_테스트() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("a23"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
 
 
     @Override
