@@ -9,7 +9,9 @@ import baseball.service.BaseBallGame;
 public class Controller {
     private final BaseBallGame game;
 
-
+    public Controller(BaseBallGame game) {
+        this.game = game;
+    }
 
     public void playGame() {
         gameStart();

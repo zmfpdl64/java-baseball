@@ -73,6 +73,9 @@ public class BaseBallGame {
     public BallStrike getBallStrike(){
         return ballStrike;
     }
+    public Answer getAnswer() {
+        return answer;
+    }
 
 
 
