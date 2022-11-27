@@ -59,11 +59,16 @@ public class BaseBallGame {
             retry();
             return;
         }
+        end();
     }
     private void retry(){
         setAnswer(new Answer("234")); // TODO: Randoms.pick 적용 하기
         initBallStrike();
         return;
+    }
+
+    private void end() {
+        keepGoing.Stop();
     }
 
     private void initBallStrike() {
