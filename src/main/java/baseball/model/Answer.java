@@ -11,6 +11,7 @@ public class Answer {
 * 3. 각 자리가 중복되면 안된다.
  */
     public Answer(String answer) {
+        validate(answer);
         this.answer = answer;
     }
     public String getAnswer() {
