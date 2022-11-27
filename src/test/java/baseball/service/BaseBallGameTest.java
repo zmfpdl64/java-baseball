@@ -45,4 +45,24 @@ class BaseBallGameTest {
 
     }
 
+    @DisplayName("재시작 값을 입력받았을 때 초기화 테스트")
+    @Test
+    void retryOrEnd() {
+        //given
+        String retry = "1";
+        int expect_ballstrike = 0;
+        String expect_answer = "234";
+
+        //when
+        game.retryOrEnd(retry);
+        int ball = game.getBallStrike().getBallStrike()[0];
+        int strike = game.getBallStrike().getBallStrike()[1];
+        String answer = game.getAnswer().getAnswer();
+
+        //then
+        assertThat(ball).isEqualTo(expect_ballstrike);
+        assertThat(ball).isEqualTo(expect_ballstrike);
+        assertThat(answer).isEqualTo(expect_answer);
+    }
+
 }
