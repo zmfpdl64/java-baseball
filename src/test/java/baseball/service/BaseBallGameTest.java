@@ -65,4 +65,18 @@ class BaseBallGameTest {
         assertThat(answer).isEqualTo(expect_answer);
     }
 
+    @DisplayName("종료값 전달했을 때 KeepGoing인자가 false로 변경되는가?")
+    @Test
+    void End() {
+        //given
+        String end = "0";
+        Boolean expect_result = false;
+
+        //when
+        game.retryOrEnd(end);
+        Boolean keepGoing = game.getKeepGoing().getKeepGoing();
+
+        //then
+        assertThat(keepGoing).isEqualTo(expect_result);
+    }
 }

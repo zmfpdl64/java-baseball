@@ -81,6 +81,9 @@ public class BaseBallGame {
     public Answer getAnswer() {
         return answer;
     }
+    public KeepGoing getKeepGoing() {
+        return keepGoing;
+    }
 
 
 
