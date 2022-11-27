@@ -16,7 +16,17 @@ public class BaseBallGame {
         this.answer = answer;
     }
 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 
+    public void setBallStrike(BallStrike ballStrike) {
+        this.ballStrike = ballStrike;
+    }
+
+    public void setKeepGoing(KeepGoing keepGoing) {
+        this.keepGoing = keepGoing;
+    }
 
     public void throwBall(String ball){
         player.setBall(ball);
