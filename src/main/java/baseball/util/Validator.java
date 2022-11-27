@@ -37,7 +37,7 @@ public class Validator {
 
     public static void ImportZero(String number) {
         for(int i = 0; i < number.length(); i++){
-            if(number.charAt(i) == 0){
+            if(number.charAt(i) == '0'){
                 throw new IllegalArgumentException(IMPORTZERO);
             }
         }
