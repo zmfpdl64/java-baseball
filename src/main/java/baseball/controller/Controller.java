@@ -1,6 +1,15 @@
 package baseball.controller;
 
+import baseball.model.Answer;
+import baseball.model.BallStrike;
+import baseball.model.KeepGoing;
+import baseball.model.Player;
+import baseball.service.BaseBallGame;
+
 public class Controller {
+    private final BaseBallGame game;
+
+
 
     public void playGame() {
         gameStart();
@@ -12,7 +21,14 @@ public class Controller {
     }
 
     public void gameStart() {
-
+        Answer answer = new Answer("123"); // TODO: 리펙토링 예정
+        BallStrike ballStrike = new BallStrike();
+        KeepGoing keepGoing = new KeepGoing();
+        Player player = new Player();
+        game.setAnswer(answer);
+        game.setBallStrike(ballStrike);
+        game.setKeepGoing(keepGoing);
+        game.setPlayer(player);
     }
 
     public void throwBall() {

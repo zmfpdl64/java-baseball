@@ -31,8 +31,6 @@ public class BaseBallGame {
     public void throwBall(String ball){
         player.setBall(ball);
         compareAnswer(answer.getAnswer(), ball);
-
-
     }
 
     private void compareAnswer(String answer, String ball){
