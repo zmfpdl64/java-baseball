@@ -11,7 +11,7 @@ public class MakeAnswer {
     private static final int MIN = 1;
     private static final int SIZE = 3;
 
-    public String makeRandomNumbers() {
+    public static String makeRandomNumbers() {
         List<String> answer = new ArrayList<>();
         while(answer.size() < 3) {
             String num = makeRandomNum();
@@ -22,7 +22,7 @@ public class MakeAnswer {
         return String.join("", answer);
     }
 
-    private String makeRandomNum(){
+    private static String makeRandomNum(){
         return String.valueOf(Randoms.pickNumberInRange(MIN, MAX));
     }
 

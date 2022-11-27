@@ -5,12 +5,20 @@ import baseball.model.BallStrike;
 import baseball.model.KeepGoing;
 import baseball.model.Player;
 import baseball.service.BaseBallGame;
+import baseball.util.MakeAnswer;
+import baseball.view.InputView;
+import baseball.view.OutputView;
 
 public class Controller {
     private final BaseBallGame game;
+    private final OutputView out;
+    private final InputView input;
 
-    public Controller(BaseBallGame game) {
+
+    public Controller(BaseBallGame game, OutputView out, InputView input) {
         this.game = game;
+        this.out = out;
+        this.input = input;
     }
 
     public void playGame() {
@@ -23,7 +31,13 @@ public class Controller {
     }
 
     public void gameStart() {
-        Answer answer = new Answer("123"); // TODO: 리펙토링 예정
+
+        out.printStart();
+        setGame();
+    }
+
+    private void setGame() {
+        Answer answer = new Answer(MakeAnswer.makeRandomNumbers());
         BallStrike ballStrike = new BallStrike();
         KeepGoing keepGoing = new KeepGoing();
         Player player = new Player();
