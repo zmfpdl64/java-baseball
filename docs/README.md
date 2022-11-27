@@ -48,8 +48,8 @@
 4. 볼, 스트라이크 저장하는 객체
 
 ## Util
-1. Validator
-2. Randoms.pick
+1. Validator #13
+2. Randoms.pick #14
 
 ## Validation #13
 입력값에 대한 유효성 검사
