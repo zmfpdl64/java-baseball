@@ -69,7 +69,7 @@ class BaseBallGameTest {
     @Test
     void End() {
         //given
-        String end = "0";
+        String end = "2";
         Boolean expect_result = false;
 
         //when
