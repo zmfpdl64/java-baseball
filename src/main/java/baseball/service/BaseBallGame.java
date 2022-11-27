@@ -1,9 +1,6 @@
 package baseball.service;
 
-import baseball.model.Answer;
-import baseball.model.BallStrike;
-import baseball.model.KeepGoing;
-import baseball.model.Player;
+import baseball.model.*;
 
 public class BaseBallGame {
 
@@ -54,6 +51,23 @@ public class BaseBallGame {
                 }
             }
         }
+    }
+
+    public void retryOrEnd(String retry) {
+        Retry.validate(retry);
+        if(retry.equals("1")){ // TODO: 리펙토링 해줄 것
+            retry();
+            return;
+        }
+    }
+    private void retry(){
+        setAnswer(new Answer("234")); // TODO: Randoms.pick 적용 하기
+        initBallStrike();
+        return;
+    }
+
+    private void initBallStrike() {
+        setBallStrike(new BallStrike());
     }
 
     public BallStrike getBallStrike(){
