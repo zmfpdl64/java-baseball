@@ -26,8 +26,6 @@ public class Controller {
 //        지금 게임을 유지 할건지
         throwBall();
         restart();
-        end();
-
     }
 
     public void gameStart() {
@@ -48,14 +46,12 @@ public class Controller {
     }
 
     public void throwBall() {
-
+        out.printInputBall();
+        game.throwBall(input.inputBall());
     }
     public void restart() {
-
+        out.printRetry();
+        game.retryOrEnd(input.inputRetry());
     }
-    public void end() {
-
-    }
-
 
 }
