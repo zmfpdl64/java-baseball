@@ -23,13 +23,16 @@ public class Controller {
 
     public void playGame() {
         gameStart();
-//        지금 게임을 유지 할건지
-        throwBall();
-        restart();
+        while(game.getKeepGoing().getKeepGoing()){
+            throwBall();
+            if(game.getBallStrike().getBallStrike()[1] == 3 ){
+                restart();
+            }
+        }
+
     }
 
     public void gameStart() {
-
         out.printStart();
         setGame();
     }
@@ -48,6 +51,8 @@ public class Controller {
     public void throwBall() {
         out.printInputBall();
         game.throwBall(input.inputBall());
+        out.printResultState(game.getBallStrike());
+        game.initBallStrike();
     }
     public void restart() {
         out.printRetry();

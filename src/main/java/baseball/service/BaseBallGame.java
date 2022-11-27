@@ -71,7 +71,7 @@ public class BaseBallGame {
         keepGoing.Stop();
     }
 
-    private void initBallStrike() {
+    public void initBallStrike() {
         setBallStrike(new BallStrike());
     }
 
